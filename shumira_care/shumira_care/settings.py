@@ -27,7 +27,7 @@ SECRET_KEY = config('MY_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('MY_DEBUG', cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['shumira.care', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -141,6 +141,17 @@ LOGIN_REDIRECT_URL = 'dashboard'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+
+
+
+SECURE_HSTS_SECONDS = 31536000  # 1 year
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+SECURE_BROWSER_XSS_FILTER = True
+SESSION_COOKIE_SECURE = True  # Only allow cookies over HTTPS
+CSRF_COOKIE_SECURE = True  # CSRF token should be sent over HTTPS
+
+
 
 
 JAZZMIN_SETTINGS = {
